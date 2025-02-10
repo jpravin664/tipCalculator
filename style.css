@@ -1,0 +1,122 @@
+/* Global Styles */
+* {
+  font-family: 'Poppins', Avenir Next, Helvetica, sans-serif;
+  color: white;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, #434190, #252b5b);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Card Wrapper */
+.wrapper {
+  width: 360px;
+  background: #1e1e2f;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Container Styling */
+.container {
+  margin-top: 1.2rem;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Input Field */
+.inputContainer {
+  background: #2d2e48;
+  border-radius: 8px;
+  padding: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#billTotalInput,
+#tipInput {
+  font-size: 1.1rem;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  flex: 1;
+  padding: 0.4rem;
+}
+
+/* Button Container */
+.buttonContainer {
+  background: #5c61f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.buttonContainer:hover {
+  background: #7277ff;
+}
+
+/* Split Controls */
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.splitButton {
+  background: #5c61f2;
+  border: none;
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.splitButton:hover {
+  background: #7277ff;
+}
+
+/* Split Amount */
+.splitAmount {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #d1d5ff;
+}
+
+/* Bottom Section */
+#bottom {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.totalContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.total {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #d1d5ff;
+}
