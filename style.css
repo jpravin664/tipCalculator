@@ -8,7 +8,7 @@
 }
 
 body {
-  background: linear-gradient(135deg, #434190, #252b5b);
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,32 +17,36 @@ body {
 
 /* Card Wrapper */
 .wrapper {
-  width: 360px;
-  background: #1e1e2f;
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+  width: 380px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Container Styling */
 .container {
-  margin-top: 1.2rem;
+  margin-top: 1.5rem;
 }
 
 .title {
   font-weight: 600;
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #e0e0e0;
 }
 
 /* Input Field */
 .inputContainer {
-  background: #2d2e48;
-  border-radius: 8px;
-  padding: 0.6rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 0.8rem;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
+  margin-bottom: 1rem;
 }
 
 #billTotalInput,
@@ -53,60 +57,66 @@ body {
   outline: none;
   color: white;
   flex: 1;
-  padding: 0.4rem;
+  padding: 0.5rem;
+}
+
+#billTotalInput::placeholder,
+#tipInput::placeholder {
+  color: rgba(255, 255, 255, 0.2);
 }
 
 /* Button Container */
 .buttonContainer {
-  background: #5c61f2;
+  background: #6c5ce7;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 2rem;
-  height: 2rem;
+  width: 2.2rem;
+  height: 2.2rem;
   border-radius: 50%;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .buttonContainer:hover {
-  background: #7277ff;
+  background: #7d6df0;
 }
 
 /* Split Controls */
 .controls {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
+  margin-bottom: 1.5rem;
 }
 
 .splitButton {
-  background: #5c61f2;
+  background: #6c5ce7;
   border: none;
-  padding: 0.4rem 1rem;
-  border-radius: 6px;
-  font-size: 0.9rem;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .splitButton:hover {
-  background: #7277ff;
+  background: #7d6df0;
 }
 
 /* Split Amount */
 .splitAmount {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: bold;
-  color: #d1d5ff;
+  color: #e0e0e0;
 }
 
 /* Bottom Section */
 #bottom {
   display: flex;
   justify-content: space-between;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 
 .totalContainer {
@@ -116,7 +126,21 @@ body {
 }
 
 .total {
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: bold;
-  color: #d1d5ff;
+  color: #e0e0e0;
+}
+
+/* Additional Styling for a Modern Look */
+.wrapper:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease;
+}
+
+.inputContainer:focus-within {
+  border: 1px solid #6c5ce7;
+}
+
+.splitButton:active {
+  transform: scale(0.95);
 }
