@@ -16,7 +16,6 @@ These are all the DIV ID's you're gonna need access to 👇
 #3 ID 👉 'numberOfPeople' = Current number of people you're splitting the bill between
 #4 ID 👉 'perPersonTotal' = Total dollar value owed per person
 */
-
 // Get global access to all inputs / divs here (you'll need them later 😘)
 // bill input, tip input, number of people div, and per person total div
 const billInput = document.getElementById('billTotalInput')
@@ -24,12 +23,13 @@ const tipInput = document.getElementById('tipInput')
 const numberOfPeopleDiv = document.getElementById('numberOfPeople')
 const perPersonTotalDiv = document.getElementById('perPersonTotal')
 
-
-
 // Get number of people from number of people div
 let numberOfPeople = Number(numberOfPeopleDiv.textContent)
 
-
+// ** Function to format currency in Indian Rupees **
+const formatCurrency = (amount) => {
+    return new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format(amount)
+}
 
 // ** Calculate the total bill per person **
 const calculateBill = () => {
@@ -48,41 +48,38 @@ const calculateBill = () => {
     // calculate the per person total (total divided by number of people)
     const perPersonTotal = total / numberOfPeople
   
-    // update the perPersonTotal on DOM & show it to user
-    perPersonTotalDiv.innerHTML = `$${perPersonTotal.toFixed(2)}`
-  
-  }
-  
-  // ** Splits the bill between more people **
-  const increasePeople = () => {
+    // update the perPersonTotal on DOM & show it to user in INR
+    perPersonTotalDiv.innerHTML = formatCurrency(perPersonTotal)
+}
+
+// ** Splits the bill between more people **
+const increasePeople = () => {
     // increment the amount of people
     numberOfPeople += 1                 
-  
+
     // update the DOM with the new number of people
     numberOfPeopleDiv.innerHTML = numberOfPeople
-  
+
     // calculate the bill based on the new number of people
     calculateBill()
-  
-  }
-  
-  // ** Splits the bill between fewer people **
-  const decreasePeople = () => {
+}
+
+// ** Splits the bill between fewer people **
+const decreasePeople = () => {
     // guard clause
     // if amount is 1 or less simply return
     // (a.k.a you can't decrease the number of people to 0 or negative!)
-    if (numberOfPeople <= 1 || billInput<1){
-      alert("You cannot go less than 1")
-      return
+    if (numberOfPeople <= 1 || Number(billInput.value) <= 0) {
+        alert("You cannot go less than 1 or enter a bill of ₹0")
+        return
     }
     
     // decrement the amount of people
     numberOfPeople -= 1
-  
+
     // update the DOM with the new number of people
     numberOfPeopleDiv.innerHTML = numberOfPeople
-  
+
     // calculate the bill based on the new number of people
     calculateBill()
-  
-  }
+}
